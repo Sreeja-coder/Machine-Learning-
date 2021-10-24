@@ -3,28 +3,28 @@ Old Bailey Decisions: Final Report
 
 1.	Overview of the Project 
 
-Old Bailey Decisions holds digitized records of the Old Bailey Court Proceedings. Every proceeding deals with criminal court cases from England and Wales with a judgement being passed as “guilty” or “not guilty”.  
-Aim: This is the crux of our project. We are training classifier models on the train data to predict the decision of the court - “guilty” or “not guilty”.  
+Old Bailey Decisions holds digitized records of the Old Bailey Court Proceedings. Every proceeding deals with criminal court cases from England and Wales with a judgement being passed as “guilty” or “not guilty”.  <br>
+Aim: This is the crux of our project. We are training classifier models on the train data to predict the decision of the court - “guilty” or “not guilty”.  <br>
 
-We have been given different feature representation of the data.
-•	BOW – bag of words dataset represents most frequently used words in the trail and its counts.    10000 words have been considered for each trial. 
-•	Tfidf – Is an improvement over bow representation, where the frequent words are weighted down using the idf. Since bow has a dimension of 10000, Tfidf also has 10000.
-•	Glove – This dataset consists of word embeddings weighted by Tfidf.
-•	Misc – This dataset has categorically attributes.
+We have been given different feature representation of the data. <br>
+•	BOW – bag of words dataset represents most frequently used words in the trail and its counts.    10000 words have been considered for each trial.  <br>
+•	Tfidf – Is an improvement over bow representation, where the frequent words are weighted down using the idf. Since bow has a dimension of 10000, Tfidf also has 10000. <br>
+•	Glove – This dataset consists of word embeddings weighted by Tfidf. <br>
+•	Misc – This dataset has categorically attributes. <br>
 
-Each of these datasets has a train, test and eval files. We can pick any dataset and train our model on the training files of that dataset. Test our model on the test file and evaluate it on the eval.
-We must be very sure we do not use any of the testing file data while training, this will corrupt our model. This might give us less empirical error but high generalization error on eval dataset.
+Each of these datasets has a train, test and eval files. We can pick any dataset and train our model on the training files of that dataset. Test our model on the test file and evaluate it on the eval. <br>
+We must be very sure we do not use any of the testing file data while training, this will corrupt our model. This might give us less empirical error but high generalization error on eval dataset. <br>
 
-2.	Important Ideas Explored.
+2.	Important Ideas Explored. <br>
 
-•	Data Cleaning/pre-processing
-•	Cross – Validation
-•	Hyper-parameters
-•	Evaluation techniques
-•	Overfitting/Underfitting
-•	Generalization error
-•	Python Packages of Random Forest and Neural Nets
-•	Algorithms: Perceptron,ID3,SVM,Logistic Regression, Ensemble.
+•	Data Cleaning/pre-processing <br>
+•	Cross – Validation <br>
+•	Hyper-parameters  <br>
+•	Evaluation techniques <br>
+•	Overfitting/Underfitting  <br>
+•	Generalization error <br>
+•	Python Packages of Random Forest and Neural Nets  <br>
+•	Algorithms: Perceptron,ID3,SVM,Logistic Regression, Ensemble. <br>
 
 
 
