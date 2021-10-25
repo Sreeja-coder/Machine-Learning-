@@ -57,7 +57,7 @@ The course of the project has taught the following: <br>
 
 5. ####	Results <br>
 
-i.	color.Cyan(Average Perceptron:) <br>
+i.	Average Perceptron: <br>
 
 This is the first algorithm I implemented. It is a variation of a simple perceptron. I used the TFIDF dataset as it was already scaled. In my opinion it has helped in training the model better. Also, the dataset had numerical values so, it was easy to implement the algorithm. I had to do pre-processing on the “libsvm” format and changed the labels to <br>
 -1 and 1 so that the weights get updates correctly. <br>
