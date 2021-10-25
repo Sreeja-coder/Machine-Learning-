@@ -58,105 +58,105 @@ The course of the project has taught the following: <br>
 
 i.	color.Cyan(Average Perceptron:) <br>
 
-This is the first algorithm I implemented. It is a variation of a simple perceptron. I used the TFIDF dataset as it was already scaled. In my opinion it has helped in training the model better. Also, the dataset had numerical values so, it was easy to implement the algorithm. I had to do pre-processing on the “libsvm” format and changed the labels to 
--1 and 1 so that the weights get updates correctly.
+This is the first algorithm I implemented. It is a variation of a simple perceptron. I used the TFIDF dataset as it was already scaled. In my opinion it has helped in training the model better. Also, the dataset had numerical values so, it was easy to implement the algorithm. I had to do pre-processing on the “libsvm” format and changed the labels to <br>
+-1 and 1 so that the weights get updates correctly. <br>
 
-Filename: avg_perceptron_tfidf_submission1.py
-Dataset: Tfidf
-Accuracy on Train: 80.14 %
-Accuracy on Test: 70.488 %
-Accuracy on Eval: 71.161 % [on Kaggle results(2).csv]
-
-
-ii.	Margin Perceptron:
-
-This was part of my second checkpoint submission. It is also a variant of simple perceptron. I wanted to explore margin hyper-parameters along with the learning rate. I used BOW dataset. I used the max value of each column to scale the features.  I was hoping for a better accuracy than average, but it did not give me a boost as I had expected. I feel my scaling was not appropriate. But I observed that the generalize error is not far from the empirical error, I feel by using two hyper-parameters I was able to control over-fitting.
-
-Filename: avg_perceptron_tfidf_submission1.py
-Dataset: BOW
-Accuracy on Train: 72.09142857 %
-Accuracy on Test: 67.3 %
-Accuracy on Eval: 69.9% % [on Kaggle results.csv]
-
-iii.	ID3:
-This was also a part of my second checkpoint submission. To implement this algorithm, I had to pre-process the dataset quite a bit. I used the misc dataset. I had to use nlp techniques to extract the age column and created a dataframe to have labels column.
-For binning I used the following techniques:
-Binned using a specified intervals:  8<=age <= 22 – group A, 22< age<=38 – group B, 38<age<=54-group C ,54 < age <=70-groupD and 70<age -group E. This gave me recursion error in test (I guess my implementation was faulty)
-Binned using the mean of the column into 2 bins thinking many bins were causing the issue age<mean- group A and mean>=age -group B. This gave me a very low accuracy on test.
-Hence, I considered age as multiclass feature and just applied ID3 on it without binning.
-
-Filename pre_processing_misc.py; ID3_misc.py
-Dataset: misc
-Accuracy on Train: 81 %
-Accuracy on Test: 77 %
-Accuracy on Eval: 75% [on Kaggle results.csv(old)]
-
-iv.	Ensemble Perceptron-ID3:
-
-This is a part of my checkpoint3 submission. As mentioned above my ID3 implementation was incorrect as I had not performed binning. So, after HW6 I got an idea to implement ID3 without requiring binning.
-So, I used two weak classifiers.
-Used average- perceptron to train on misc dataset and create a bag of classifiers - 200(bagging).
-Used them to predict for each row of train, test and eval to get a new dataset consisting of N rows and 200 columns of (-1,1).
-Trained the ID3 on this new dataset to find the root and used that to predict on test and eval. 
-
-Filename: perceptron_tree_ensemble_working.ipynb
-Dataset: misc
-Accuracy on Train: 81 %
-Accuracy on Test: 79.27 %
-Accuracy on Eval: 79.390% [on Kaggle perceptron_id3_ensemble.csv]
-
-v.	SVM (support vector machines)
-
-This is a part of my checkpoint3 submission. I used SVM that we had implemented in class for HW6. I used BOW for SVM, to compare if this gives any better results than the margin-perceptron on the BOW. It does give an improvement but not much.
-I feel BOW dataset has noise and I need to weed out the unimportant columns.
+Filename: avg_perceptron_tfidf_submission1.py  <br>
+Dataset: Tfidf  <br>
+Accuracy on Train: 80.14 %  <br>
+Accuracy on Test: 70.488 %  <br>
+Accuracy on Eval: 71.161 % [on Kaggle results(2).csv]  <br>
 
 
-Filename: implementing_svm.py
-Dataset: BOW
-Accuracy on Train: 77.04571%
-Accuracy on Test: 70.75%
-Accuracy on Eval: 70.81% [on Kaggle svm.csv]
+ii.	Margin Perceptron:  <br>
 
-vi.	Ensemble SVM-Perceptron
+This was part of my second checkpoint submission. It is also a variant of simple perceptron. I wanted to explore margin hyper-parameters along with the learning rate. I used BOW dataset. I used the max value of each column to scale the features.  I was hoping for a better accuracy than average, but it did not give me a boost as I had expected. I feel my scaling was not appropriate. But I observed that the generalize error is not far from the empirical error, I feel by using two hyper-parameters I was able to control over-fitting. <br>
 
-This is a part of my checkpoint3 submission. I used an Ensemble of SVM and Perceptron to see if both together can give better accuracy. 
-So I implemented it on two datasets 
-Tfidf so that I could see the difference between just one algorithm (SVM/Perceptron) and its ensemble. Could see slight improvement.
+Filename: avg_perceptron_tfidf_submission1.py <br>
+Dataset: BOW  <br>
+Accuracy on Train: 72.09142857 %  <br>
+Accuracy on Test: 67.3 %  <br>
+Accuracy on Eval: 69.9% % [on Kaggle results.csv]  <br>
 
-Filename: perceptron_svm_ensemble_tfidf.ipynb
-Dataset: Tfidf
-Accuracy on Train: 80.1 %
-Accuracy on Test: 72.7%
-Accuracy on Eval: 73.330% [on Kaggle perceptron_svm_ensemble_tfidf.csv]
+iii.	ID3:  <br>
+This was also a part of my second checkpoint submission. To implement this algorithm, I had to pre-process the dataset quite a bit. I used the misc dataset. I had to use nlp techniques to extract the age column and created a dataframe to have labels column.  <br>
+For binning I used the following techniques:  <br>
+Binned using a specified intervals:  8<=age <= 22 – group A, 22< age<=38 – group B, 38<age<=54-group C ,54 < age <=70-groupD and 70<age -group E. This gave me recursion error in test (I guess my implementation was faulty)  <br>
+Binned using the mean of the column into 2 bins thinking many bins were causing the issue age<mean- group A and mean>=age -group B. This gave me a very low accuracy on test.  <br>
+Hence, I considered age as multiclass feature and just applied ID3 on it without binning. <br>
 
-Implemented it on misc too, just to see if this gives me a better score proving the point that Tfidf and bow has noise in the dataset and I need to take care of it .
+Filename pre_processing_misc.py; ID3_misc.py <br>
+Dataset: misc  <br>
+Accuracy on Train: 81 %  <br>
+Accuracy on Test: 77 %  <br>
+Accuracy on Eval: 75% [on Kaggle results.csv(old)]  <br>
 
-Filename: perceptron_svm_ensmble.ipynb
-Dataset: Tfidf
-Accuracy on Train: 83.3 %
-Accuracy on Test: 79.27%
-Accuracy on Eval: 79.504% [on Kaggle perceptron_svm_ensemble.csv]
+iv.	Ensemble Perceptron-ID3:  <br>
 
-vii.	Python Library: Random Forest
+This is a part of my checkpoint3 submission. As mentioned above my ID3 implementation was incorrect as I had not performed binning. So, after HW6 I got an idea to implement ID3 without requiring binning.  <br>
+So, I used two weak classifiers.  <br>
+Used average- perceptron to train on misc dataset and create a bag of classifiers - 200(bagging).  <br>
+Used them to predict for each row of train, test and eval to get a new dataset consisting of N rows and 200 columns of (-1,1).  <br>
+Trained the ID3 on this new dataset to find the root and used that to predict on test and eval.   <br>
+ 
+Filename: perceptron_tree_ensemble_working.ipynb  <br>
+Dataset: misc  <br>
+Accuracy on Train: 81 %  <br> 
+Accuracy on Test: 79.27 %  <br>
+Accuracy on Eval: 79.390% [on Kaggle perceptron_id3_ensemble.csv]  <br>
 
-Throughout the project I have been trying to get my ID3 work in its normal form. Hence, I thought I will implement Random forest on misc. I used the following sklearn  libraries
-StandardScaler, RandomForestClassifier, accuracy_score.
-controlled the depth hyper-parameter to 7 using parameter max_depth (did few trials to find the best)
-n_estimators parameter lets me set the number of trees it creates. Then uses the output of all the trees to predict the final verdict.
+v.	SVM (support vector machines)  <br>
 
-Filename: Random_forest_misc_final.ipynb
-Dataset: misc
-Accuracy on Train: 79.35 %
-Accuracy on Test: 79.64%
-Accuracy on Eval: 80.45% [on Kaggle random_forest_final.csv]
-
-
+This is a part of my checkpoint3 submission. I used SVM that we had implemented in class for HW6. I used BOW for SVM, to compare if this gives any better results than the margin-perceptron on the BOW. It does give an improvement but not much. <br>
+I feel BOW dataset has noise and I need to weed out the unimportant columns.  <br>
 
 
-6.	Future Improvement Ideas
-•	As I have mentioned in most of my implementations, I wanted to extract important columns from Tfidf and bow dataset which I was not able to achieve. I would like to explore SVD (singular vector decomposition), I have read it gives us the columns which hold the most information.
-•	And I would like to implement binning correctly on ID3 and try SVM over trees from HW6.
-•	Also, would try Neural Nets.
+Filename: implementing_svm.py <br>
+Dataset: BOW  <br>
+Accuracy on Train: 77.04571%  <br>
+Accuracy on Test: 70.75%  <br>
+Accuracy on Eval: 70.81% [on Kaggle svm.csv]  <br>
+
+vi.	Ensemble SVM-Perceptron  <br>
+
+This is a part of my checkpoint3 submission. I used an Ensemble of SVM and Perceptron to see if both together can give better accuracy.  <br>
+So I implemented it on two datasets  <br>
+Tfidf so that I could see the difference between just one algorithm (SVM/Perceptron) and its ensemble. Could see slight improvement. <br>
+
+Filename: perceptron_svm_ensemble_tfidf.ipynb  <br>
+Dataset: Tfidf  <br>
+Accuracy on Train: 80.1 %  <br>
+Accuracy on Test: 72.7%  <br>
+Accuracy on Eval: 73.330% [on Kaggle perceptron_svm_ensemble_tfidf.csv]  <br>
+
+Implemented it on misc too, just to see if this gives me a better score proving the point that Tfidf and bow has noise in the dataset and I need to take care of it . <br>
+
+Filename: perceptron_svm_ensmble.ipynb <br>
+Dataset: Tfidf  <br>
+Accuracy on Train: 83.3 % <br>
+Accuracy on Test: 79.27%  <br>
+Accuracy on Eval: 79.504% [on Kaggle perceptron_svm_ensemble.csv] <br>
+
+vii.	Python Library: Random Forest <br>
+
+Throughout the project I have been trying to get my ID3 work in its normal form. Hence, I thought I will implement Random forest on misc. I used the following sklearn  libraries  <br>
+StandardScaler, RandomForestClassifier, accuracy_score. <br>
+controlled the depth hyper-parameter to 7 using parameter max_depth (did few trials to find the best) <br>
+n_estimators parameter lets me set the number of trees it creates. Then uses the output of all the trees to predict the final verdict. <br>
+
+Filename: Random_forest_misc_final.ipynb <br>
+Dataset: misc  <br>
+Accuracy on Train: 79.35 %  <br>
+Accuracy on Test: 79.64%  <br>
+Accuracy on Eval: 80.45% [on Kaggle random_forest_final.csv]  <br>
+
+
+
+
+6.	Future Improvement Ideas  <br>
+•	As I have mentioned in most of my implementations, I wanted to extract important columns from Tfidf and bow dataset which I was not able to achieve. I would like to explore SVD (singular vector decomposition), I have read it gives us the columns which hold the most information. <br>
+•	And I would like to implement binning correctly on ID3 and try SVM over trees from HW6. <br>
+•	Also, would try Neural Nets.  <br>
 
 
 
