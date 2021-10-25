@@ -28,35 +28,35 @@ We must be very sure we do not use any of the testing file data while training, 
 
 
 
-3.	Ideas from the Class 
+3.	Ideas from the Class  <br>
 
-I have ventured into the topics explained in the class and the algorithms implemented in the assignments.
-•	The project has label as 0 and 1 but most of our algorithms taught in the class need -1 and 1; So that the weights can be updated accordingly. For e.g. perceptron needs -1 and 1.
-•	Scaling/Normalizing the features help to lower the effect of the dominant features and standardize the dataset and give a good accuracy. We can also scale the size of the dataset.
-•	Cross Validation is an important concept from class, it has helped in finding the apt hyper-parameters to train the model for making it work at its optimum.
-•	Hyper-parameters, they help to tune the algorithm better or to avoid over-fitting.
-•	Binning/discretizing feature values, it is an important concept for working with categorically data, it is very useful for working with misc dataset.
-•	Ensemble and Random Forest is another idea I have implemented from the class, which helps in boosting the accuracy of weak classifiers.
-•	I have used algorithms like perceptron and its variants, SVM, ID3, Random Forest and ensemble.
+I have ventured into the topics explained in the class and the algorithms implemented in the assignments. <br>
+•	The project has label as 0 and 1 but most of our algorithms taught in the class need -1 and 1; So that the weights can be updated accordingly. For e.g. perceptron needs -1 and 1. <br>
+•	Scaling/Normalizing the features help to lower the effect of the dominant features and standardize the dataset and give a good accuracy. We can also scale the size of the dataset. <br>
+•	Cross Validation is an important concept from class, it has helped in finding the apt hyper-parameters to train the model for making it work at its optimum. <br>
+•	Hyper-parameters, they help to tune the algorithm better or to avoid over-fitting. <br>
+•	Binning/discretizing feature values, it is an important concept for working with categorically data, it is very useful for working with misc dataset.  <br>
+•	Ensemble and Random Forest is another idea I have implemented from the class, which helps in boosting the accuracy of weak classifiers.  <br>
+•	I have used algorithms like perceptron and its variants, SVM, ID3, Random Forest and ensemble.  <br>
 
 
 4.	Learnings
 
-The course of the project has taught the following:
-•	Data given needs cleaning; we cannot just plug un-processed data into an algorithm.  e.g. the miscellaneous dataset had some unknown values or age written as “forty” in words rather than in the numerical format.  Data cleaning/pre-processing was an important part of this project.
-•	Classifiers like perceptron gave good accuracy on training but did not do as well on test and eval dataset. That is, it had a low empirical error but comparatively high generalization error, suggesting that if we gave it more example to train on it would have given a better generalization error or a higher accuracy on train and eval. [my understanding]
-•	Or it was over-fitting the training dataset.
-•	Misc dataset, seemed to work the best with most of the algorithms, my take on this is in other datasets it had noise and hence needed some tweaking in the sense of knowing which columns to consider while training a model, whereas misc dataset was data rich and compact.
-•	ID3 works well with categorical data but needs binning to take care of real value numbers and if not binned properly then it can lead to recursion errors while testing.
-•	Ensemble works way better than just individual algorithms. As it considers two or more weak classifiers or a weak and strong classifier and helps train and predict, hence has a better probability of predicting the labels correctly.
-•	Trees tend to overfit quick on training dataset (noticed that in Random forest implementation), learned the importance of depth as a hyper-parameter.
+The course of the project has taught the following: <br>
+•	Data given needs cleaning; we cannot just plug un-processed data into an algorithm.  e.g. the miscellaneous dataset had some unknown values or age written as “forty” in words rather than in the numerical format.  Data cleaning/pre-processing was an important part of this project. <br>
+•	Classifiers like perceptron gave good accuracy on training but did not do as well on test and eval dataset. That is, it had a low empirical error but comparatively high generalization error, suggesting that if we gave it more example to train on it would have given a better generalization error or a higher accuracy on train and eval. [my understanding] <br> 
+•	Or it was over-fitting the training dataset.<br>
+•	Misc dataset, seemed to work the best with most of the algorithms, my take on this is in other datasets it had noise and hence needed some tweaking in the sense of knowing which columns to consider while training a model, whereas misc dataset was data rich and compact. <br>
+•	ID3 works well with categorical data but needs binning to take care of real value numbers and if not binned properly then it can lead to recursion errors while testing. <br>
+•	Ensemble works way better than just individual algorithms. As it considers two or more weak classifiers or a weak and strong classifier and helps train and predict, hence has a better probability of predicting the labels correctly. <br>
+•	Trees tend to overfit quick on training dataset (noticed that in Random forest implementation), learned the importance of depth as a hyper-parameter. <br>
 
 
 
 
-5.	Results 
+5.	Results <br>
 
-i.	Average Perceptron:
+i.	color.Cyan(Average Perceptron:) <br>
 
 This is the first algorithm I implemented. It is a variation of a simple perceptron. I used the TFIDF dataset as it was already scaled. In my opinion it has helped in training the model better. Also, the dataset had numerical values so, it was easy to implement the algorithm. I had to do pre-processing on the “libsvm” format and changed the labels to 
 -1 and 1 so that the weights get updates correctly.
