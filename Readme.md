@@ -1,7 +1,7 @@
 Old Bailey Decisions: Final Report
 
 
-1.	Overview of the Project 
+1.	#### Overview of the Project 
 
 Old Bailey Decisions holds digitized records of the Old Bailey Court Proceedings. Every proceeding deals with criminal court cases from England and Wales with a judgement being passed as “guilty” or “not guilty”.  <br>
 Aim: This is the crux of our project. We are training classifier models on the train data to predict the decision of the court - “guilty” or “not guilty”.  <br>
@@ -15,7 +15,7 @@ We have been given different feature representation of the data. <br>
 Each of these datasets has a train, test and eval files. We can pick any dataset and train our model on the training files of that dataset. Test our model on the test file and evaluate it on the eval. <br>
 We must be very sure we do not use any of the testing file data while training, this will corrupt our model. This might give us less empirical error but high generalization error on eval dataset. <br>
 
-2.	Important Ideas Explored. <br>
+2.	#### Important Ideas Explored. <br>
 
 •	Data Cleaning/pre-processing <br>
 •	Cross – Validation <br>
@@ -28,7 +28,7 @@ We must be very sure we do not use any of the testing file data while training, 
 
 
 
-3.	Ideas from the Class  <br>
+3.	#### Ideas from the Class  <br>
 
 I have ventured into the topics explained in the class and the algorithms implemented in the assignments. <br>
 •	The project has label as 0 and 1 but most of our algorithms taught in the class need -1 and 1; So that the weights can be updated accordingly. For e.g. perceptron needs -1 and 1. <br>
@@ -40,7 +40,7 @@ I have ventured into the topics explained in the class and the algorithms implem
 •	I have used algorithms like perceptron and its variants, SVM, ID3, Random Forest and ensemble.  <br>
 
 
-4.	Learnings
+4. ####	Learnings
 
 The course of the project has taught the following: <br>
 •	Data given needs cleaning; we cannot just plug un-processed data into an algorithm.  e.g. the miscellaneous dataset had some unknown values or age written as “forty” in words rather than in the numerical format.  Data cleaning/pre-processing was an important part of this project. <br>
@@ -54,7 +54,7 @@ The course of the project has taught the following: <br>
 
 
 
-5.	Results <br>
+5. ####	Results <br>
 
 i.	color.Cyan(Average Perceptron:) <br>
 
@@ -153,7 +153,7 @@ Accuracy on Eval: 80.45% [on Kaggle random_forest_final.csv]  <br>
 
 
 
-6.	Future Improvement Ideas  <br>
+6.	#### Future Improvement Ideas  <br>
 •	As I have mentioned in most of my implementations, I wanted to extract important columns from Tfidf and bow dataset which I was not able to achieve. I would like to explore SVD (singular vector decomposition), I have read it gives us the columns which hold the most information. <br>
 •	And I would like to implement binning correctly on ID3 and try SVM over trees from HW6. <br>
 •	Also, would try Neural Nets.  <br>
